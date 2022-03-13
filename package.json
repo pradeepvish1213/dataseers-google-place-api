@@ -1,0 +1,34 @@
+{
+  "name": "dataseers-google-place-api",
+  "version": "1.0.0",
+  "description": "Node client for Google Places API (placeSearch, placeDetails, placePhoto). Written by pradeep.",
+  "main": "src/GooglePlacesApi.js",
+  "scripts": {
+    "test": "ava --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pradeepvish1213/dataseers-google-place-api.git"
+  },
+  "keywords": [
+    "google",
+    "places",
+    "api",
+    "placesearch",
+    "placedetails",
+    "placephoto"
+  ],
+  "author": "Pradeep Vishwakarma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pradeepvish1213/dataseers-google-place-api/issues"
+  },
+  "homepage": "https://github.com/pradeepvish1213/dataseers-google-place-api#readme",
+  "dependencies": {
+    "axios": "^0.26.1"
+  },
+  "devDependencies": {
+    "ava": "^4.1.0",
+    "dotenv": "^16.0.0"
+  }
+}
