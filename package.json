@@ -1,6 +1,6 @@
 {
   "name": "dataseers-google-place-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node client for Google Places API (placeSearch, placeDetails, placePhoto). Written by pradeep.",
   "main": "src/GooglePlacesApi.js",
   "scripts": {
