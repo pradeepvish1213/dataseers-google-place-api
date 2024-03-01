@@ -3,10 +3,10 @@ require('dotenv').config();
 const test = require('ava');
 const GooglePlacesApi = require('../src/GooglePlacesApi.js');
 const googleapi = new GooglePlacesApi(process.env.GOOGLE_API_KEY);
-const photoReference = 'Aap_uEArt-x7N5QMASQdDJNc_z-e_24dGZKCDXbtlGI2zzLU1H72jSrFOn4tlQrBGze9h59s7aamgQUfQ8SGQHtpxhR0NljDXiWX37f2bmh9urEvNtWskAPnWqQAPkHYAP2-d7uSV-Ee2OPaeWPZkRoQGt5SIg_YltdC8uRdUIlEyJcFuBGv';
+const photoReference = 'ATplDJZ7L5BQc7g0Owtn4xOR73ESyBD5WYgaCk8lxAkRDYVHr3Q6G4gFf-_34KXYSNlDCkwqQ2xmoBP0znpuLXFFG4fT-966OYzyHooi1D7HAlZhbepDHXUGS4oQDj8aAI-cgWdFRBjAGN_Bpl82vJTHN1703T0VhZi9MiqAw-nUIq4s26aq';
 
 const isUrl = (str) => {
-    regexp = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
+    let regexp = /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
     return regexp.test(str) === true
 }
 
@@ -46,7 +46,7 @@ test('runPlaceSearch() with locationbias should return different results for dif
 });
 
 test('runPlaceSearch() with locationbias should return correct result', async t => {
-    const result = await googleapi.runPlaceSearch('Pizza', {lat: 40.7452778, lng: -73.9880556}, 10);
+    const result = await googleapi.runPlaceSearch('Pizza - NoMad', {lat: 40.7452778, lng: -73.9880556}, 10);
     t.is(result, 'ChIJsaYZEKZZwokRxICmrKSu8Pw');
 });
 
@@ -100,5 +100,5 @@ test('runPlacePhoto() should return a url', async t => {
 });
 test('runPlacePhoto() should work', async t => {
     const result = await googleapi.runPlacePhotos(photoReference);
-    t.true(result.includes("AAcXr8oOODhcNfegBzqswPr4oD5ND4uo1qFYGdfR"));
+    t.true(result.includes("nlPtjIAIYNEwLRq3xy0mwbM1Xpb1JnAPBhRQSBVH"));
 });
